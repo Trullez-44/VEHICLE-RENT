@@ -1,0 +1,56 @@
+CREATE TABLE `CUSTOMERS`(
+    `id` BIGINT UNSIGNED NOT NULL PRIMARY KEY,
+    `name` VARCHAR(255) NOT NULL,
+    `last-name` VARCHAR(255) NOT NULL,
+    `birthdate` DATE NOT NULL,
+    `address` VARCHAR(255) NOT NULL,
+    `phone` ENUM('') NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `license` VARCHAR(255) NOT NULL
+);
+CREATE TABLE `VEHICLES`(
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `plate` VARCHAR(255) NOT NULL,
+    `car-range` VARCHAR(255) NOT NULL,
+    `insurance` TINYINT(1) NOT NULL,
+    `FK vehicle-status-id` BIGINT NOT NULL,
+    `brand` VARCHAR(255) NOT NULL,
+    `model` VARCHAR(255) NOT NULL
+);
+CREATE TABLE `DROP-OFFS`(
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `datetime-drop-off` DATETIME NOT NULL,
+    `vehicle-status-drop` VARCHAR(255) NOT NULL,
+    `on-time` TINYINT(1) NOT NULL
+);
+CREATE TABLE `RECORDS`(
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `FK rental-id` BIGINT NOT NULL,
+    `FK drop-off-id` BIGINT NOT NULL,
+    `FK pay-method-id` BIGINT NOT NULL,
+    `penalty` TINYINT(1) NOT NULL,
+    `details` VARCHAR(255) NOT NULL
+);
+CREATE TABLE `PAY-METHOD`(
+    `FK customer-id` BIGINT UNSIGNED NOT NULL PRIMARY KEY,
+    `cash` TINYINT(1) NOT NULL,
+    `card` VARCHAR(255) NOT NULL,
+    `card-number` BIGINT NULL,
+    `card-cvv` BIGINT NULL,
+    `cardholder` VARCHAR(255) NULL,
+    `due-date` DATE NULL
+);
+CREATE TABLE `VEHICLE-STATUS`(
+    `FK vehicle-id` BIGINT UNSIGNED NOT NULL PRIMARY KEY,
+    `new` TINYINT(1) NOT NULL,
+    `mileage` BIGINT NOT NULL,
+    `damages` VARCHAR(255) NOT NULL
+);
+CREATE TABLE `RENTALS`(
+    `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `FK customer-id` BIGINT NOT NULL,
+    `FK vehicle-id` BIGINT NOT NULL,
+    `start-date` DATETIME NOT NULL,
+    `end-date` DATETIME NOT NULL,
+    `details` VARCHAR(255) NOT NULL
+);
