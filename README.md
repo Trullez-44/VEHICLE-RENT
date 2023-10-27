@@ -1,9 +1,9 @@
 # README - Vehicle Rental Management
 
-Welcome to the documentation of the vehicle rental management database! I'll explain how the tables work and what data they store.
+#### Welcome to the documentation of the vehicle rental management database! I'll explain how the tables work and what data they store.
 
 ## Conceptual Data Model - Vehicle Rental Management
-In this conceptual data model, we describe the main entities and their relationships for vehicle rental management. The entities are:
+#### In this conceptual data model, we describe the main entities and their relationships for vehicle rental management. The entities are:
 
 ## CUSTOMERS
 The `CUSTOMERS` table stores information about customers. Each customer has a unique ID, and details such as name, last name, date of birth, address, phone number, email, and driver's license are recorded.
@@ -41,8 +41,18 @@ The `RENTALS` table records rental information. Each rental has a unique ID, wit
    - Attributes: ID, Start Date, End Date, Details.
    - Relationships: Each rental is associated with a customer and a vehicle.
 
-### This conceptual model provides a high-level view of the key entities and the relationships between them in the vehicle rental management system. Each entity represents an important part of the database and how they relate to each other. This model serves as a solid foundation for creating more detailed logical and physical models.
-I hope this explanation helps you understand how the data is structured and related in this database! If you have any questions or need further assistance, please don't hesitate to contact me.
+##### This conceptual model provides a high-level view of the key entities and the relationships between them in the vehicle rental management system. Each entity represents an important part of the database and how they relate to each other. This model serves as a solid foundation for creating more detailed logical and physical models.
 
-- Trullez-44
-- @CAMPUSLANDS
+### Physical Data Model - Vehicle Rental Management
+
+##### The physical data model is a detailed representation of how the database is implemented in a specific database management system. It defines the physical structures, including tables, columns, data types, and constraints. This model is used for creating and maintaining the actual database in a database management system.
+
+##### Below, you'll find an image depicting the physical data model of the vehicle rental management database. This image visually illustrates the table structures and their relationships within the database:
+
+![Descripción de la imagen](/IMGS/VEHICLE_RENT.png)
+
+### I hope this explanation helps you understand how the data is structured and related in this database! If you have any questions or need further assistance, please don't hesitate to contact me.
+
+Trullez-44
+
+@CAMPUSLANDS
